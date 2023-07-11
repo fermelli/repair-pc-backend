@@ -14,24 +14,28 @@ public class OrdenTrabajoService {
 
 	@Autowired
 	OrdenTrabajoRepository ccRepo;
-	
-	public ArrayList<OrdenTrabajo> obtenerCuentasCorrientes(Long eqId){
-		return (ArrayList<OrdenTrabajo>)ccRepo.findByeqId(eqId);
+
+	public ArrayList<OrdenTrabajo> obtenerOrdenesTrabajo() {
+		return (ArrayList<OrdenTrabajo>) ccRepo.findAll();
 	}
-	
+
+	public ArrayList<OrdenTrabajo> obtenerCuentasCorrientes(Long eqId) {
+		return (ArrayList<OrdenTrabajo>) ccRepo.findByeqId(eqId);
+	}
+
 	public OrdenTrabajo guardarCuentaCorriente(OrdenTrabajo cc) {
 		return ccRepo.save(cc);
 	}
-	
-	public Optional<OrdenTrabajo> obtenerCuentaCorrientePorId(Long id){
+
+	public Optional<OrdenTrabajo> obtenerCuentaCorrientePorId(Long id) {
 		return ccRepo.findById(id);
 	}
-	
+
 	public boolean eliminarCuentaCorriente(Long id) {
 		try {
 			ccRepo.deleteById(id);
 			return true;
-		} catch(Exception err) {
+		} catch (Exception err) {
 			return false;
 		}
 	}

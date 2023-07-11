@@ -23,25 +23,29 @@ public class OrdenTrabajoController {
 
 	@Autowired
 	OrdenTrabajoService ccService;
-	
+
+	@GetMapping()
+	public ArrayList<OrdenTrabajo> obtenerOrdenesTrabajo() {
+		return this.ccService.obtenerOrdenesTrabajo();
+	}
+
 	@GetMapping(path = "/{eqId}")
-	public ArrayList<OrdenTrabajo> obtenerCuentasCorrientes(@PathVariable("eqId") Long eqId){
+	public ArrayList<OrdenTrabajo> obtenerCuentasCorrientes(@PathVariable("eqId") Long eqId) {
 		return this.ccService.obtenerCuentasCorrientes(eqId);
 	}
-	
+
 	@PostMapping()
 	public OrdenTrabajo guardarCuentaCorriente(@RequestBody OrdenTrabajo cc) {
 		return this.ccService.guardarCuentaCorriente(cc);
 	}
-	
+
 	@DeleteMapping(path = "/{id}")
 	public String eliminarCuentaCorriente(@PathVariable("id") Long id) {
 		boolean ok = this.ccService.eliminarCuentaCorriente(id);
-		if(ok) {
-			return "Se elimino la cuenta corriente con id "+id;
-		}
-		else {
-			return "No se pudo eliminar la cuenta corriente con id "+id;
+		if (ok) {
+			return "Se elimino la cuenta corriente con id " + id;
+		} else {
+			return "No se pudo eliminar la cuenta corriente con id " + id;
 		}
 	}
 }
