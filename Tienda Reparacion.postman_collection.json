@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "615616eb-b37f-40e6-8e09-90df01f210b4",
+		"_postman_id": "988ae070-8487-46bb-b0b7-1ed6196c8bea",
 		"name": "Tienda Reparacion",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "8046053"
+		"_exporter_id": "23398434",
+		"_collection_link": "https://martian-equinox-531321.postman.co/workspace/Team-Workspace~c3a1dd85-3f13-4bcf-8495-87a269f3a38e/collection/23398434-988ae070-8487-46bb-b0b7-1ed6196c8bea?action=share&creator=23398434&source=collection_link"
 	},
 	"item": [
 		{
@@ -53,9 +54,9 @@
 					"response": []
 				},
 				{
-					"name": "obtenerClientePorId",
+					"name": "eliminarCliente",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "{{url}}/cliente/1",
@@ -71,9 +72,9 @@
 					"response": []
 				},
 				{
-					"name": "eliminarCliente",
+					"name": "obtenerClientePorId",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
 						"url": {
 							"raw": "{{url}}/cliente/1",
@@ -93,43 +94,6 @@
 		{
 			"name": "Equipo",
 			"item": [
-				{
-					"name": "obtenerAperturaCuentas",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/equipo/2",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"equipo",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "obtenerAperturaCuentaPorId",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/equipo/apc/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"equipo",
-								"apc",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "guardarAperturaCuenta",
 					"request": {
@@ -157,6 +121,41 @@
 					"response": []
 				},
 				{
+					"name": "obtenerEquipos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/equipo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerAperturaCuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/equipo/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "eliminarAperturaCuenta",
 					"request": {
 						"method": "DELETE",
@@ -175,17 +174,19 @@
 					"response": []
 				},
 				{
-					"name": "obtenerEquipos",
+					"name": "obtenerAperturaCuentaPorId",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/equipo",
+							"raw": "{{url}}/equipo/apc/1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"equipo"
+								"equipo",
+								"apc",
+								"1"
 							]
 						}
 					},
@@ -196,24 +197,6 @@
 		{
 			"name": "Orden Trabajo",
 			"item": [
-				{
-					"name": "obtenerCuentasCorrientes",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/ordenTrabajo/4",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ordenTrabajo",
-								"4"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "guardarCuentaCorriente",
 					"request": {
@@ -235,6 +218,41 @@
 							],
 							"path": [
 								"ordenTrabajo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerOrdenesTrabajo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ordenTrabajo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ordenTrabajo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerCuentasCorrientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ordenTrabajo/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ordenTrabajo",
+								"1"
 							]
 						}
 					},
