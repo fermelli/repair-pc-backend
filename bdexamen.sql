@@ -22,43 +22,62 @@ USE `bdexamen`;
 -- Volcando estructura para tabla bdexamen.cliente
 CREATE TABLE IF NOT EXISTS `cliente` (
   `idcliente` bigint NOT NULL AUTO_INCREMENT,
-  `apellidos` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `apellidos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ci` bigint NOT NULL,
-  `direccion` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `direccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `telefono` bigint NOT NULL,
   PRIMARY KEY (`idcliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla bdexamen.cliente: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla bdexamen.cliente: ~3 rows (aproximadamente)
+INSERT INTO `cliente` (`idcliente`, `apellidos`, `ci`, `direccion`, `nombre`, `telefono`) VALUES
+	(1, 'salgado', 8510425, 'loa 123', 'luis', 78787878),
+	(2, 'Garcia', 78789844, 'junin 123', 'Pedro ', 784546333),
+	(4, 'rios', 9895656, 'canelas 123', 'ana ', 5444565),
+	(5, 'rosales', 8799565, 'bolivar 1232', 'alicia', 784545555),
+	(6, 'oropeza', 965656, 'arenales 666', 'diego', 4532145);
 
 -- Volcando estructura para tabla bdexamen.equipo
 CREATE TABLE IF NOT EXISTS `equipo` (
   `idequipo` bigint NOT NULL AUTO_INCREMENT,
   `idcliente` bigint NOT NULL,
-  `detalle` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `marca` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `modelo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `detalle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `marca` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `modelo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`idequipo`),
   KEY `FKowljfwqffiqfkl10y6n5q32co` (`idcliente`),
   CONSTRAINT `FKowljfwqffiqfkl10y6n5q32co` FOREIGN KEY (`idcliente`) REFERENCES `cliente` (`idcliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla bdexamen.equipo: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdexamen.equipo: ~4 rows (aproximadamente)
+INSERT INTO `equipo` (`idequipo`, `idcliente`, `detalle`, `marca`, `modelo`) VALUES
+	(1, 1, 'Color negro', 'Toshiba', 'L390'),
+	(3, 1, 'COLOR GRIS', 'SAMSUNG', 'A103'),
+	(4, 2, 'NEGRO TINKPAD', 'LENOVOO', 'JJJKKK000'),
+	(7, 4, 'CON CARGADOR', 'LENOVO', 'ABC123'),
+	(11, 6, 'GENIAL', 'MARCA', 'MODELO');
 
 -- Volcando estructura para tabla bdexamen.orden_trabajo
 CREATE TABLE IF NOT EXISTS `orden_trabajo` (
   `idorden` bigint NOT NULL AUTO_INCREMENT,
   `equipoid` bigint NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `fecha` datetime NOT NULL,
   `idequipo` bigint DEFAULT NULL,
   PRIMARY KEY (`idorden`),
   KEY `FKqvi7n4avv8y3r7e4fb30qedu1` (`idequipo`),
   CONSTRAINT `FKqvi7n4avv8y3r7e4fb30qedu1` FOREIGN KEY (`idequipo`) REFERENCES `equipo` (`idequipo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla bdexamen.orden_trabajo: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla bdexamen.orden_trabajo: ~5 rows (aproximadamente)
+INSERT INTO `orden_trabajo` (`idorden`, `equipoid`, `descripcion`, `fecha`, `idequipo`) VALUES
+	(2, 3, 'CAMBIAR TAPA', '2023-07-10 20:00:00', NULL),
+	(3, 1, 'MANTENIMIENTO', '2023-07-12 20:00:00', NULL),
+	(4, 1, 'corregir', '2023-07-10 20:00:00', NULL),
+	(5, 4, 'ARREGLAR', '2023-07-11 20:00:00', NULL),
+	(7, 7, 'hacer mantenimiento logico', '2023-07-10 20:00:00', NULL),
+	(8, 8, 'ORDEN TRABAJO', '2023-07-10 20:00:00', NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
