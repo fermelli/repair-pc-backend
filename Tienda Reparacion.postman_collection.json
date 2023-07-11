@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "615616eb-b37f-40e6-8e09-90df01f210b4",
+		"name": "Tienda Reparacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8046053"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "obtenerClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cliente",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "guardarCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clCi\": 12312312,\r\n    \"clNombre\": \"Luis\",\r\n    \"clApellidos\": \"Sanchez\",\r\n    \"clTelefono\": 78787878,\r\n    \"clDireccion\": \"loa 123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cliente",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerClientePorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cliente/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cliente/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Equipo",
+			"item": [
+				{
+					"name": "obtenerAperturaCuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/equipo/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerAperturaCuentaPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/equipo/apc/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo",
+								"apc",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "guardarAperturaCuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eqModelo\": \"MODELO 1\",\r\n    \"eqMarca\": \"MARCA 1\",\r\n    \"eqDetalle\": \"DETALLE 1\",\r\n    \"clId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equipo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarAperturaCuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/equipo/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerEquipos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/equipo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orden Trabajo",
+			"item": [
+				{
+					"name": "obtenerCuentasCorrientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ordenTrabajo/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ordenTrabajo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "guardarCuentaCorriente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orFecha\": \"2023-07-10\",\r\n    \"orDescripcion\": \"DESCRIPCION ORDEN DE TRABAJO\",\r\n    \"eqId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/ordenTrabajo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ordenTrabajo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCuentaCorriente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ordenTrabajo/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ordenTrabajo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
